@@ -1,0 +1,11 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.main button {
+    padding: 20px;
+    margin-right: 20px;
+    width: 200px
+}

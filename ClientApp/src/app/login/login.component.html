@@ -1,17 +1,24 @@
-<form class="example-form">
-    <mat-form-field appearance="fill">
-        <mat-label>Usuário</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <mat-label>Senha</mat-label>
-        <input matInput>
-    </mat-form-field>
-    <button class="btn btn-primary"> Entrar </button>
-</form>
+<div style="display: flex;">
+    <div>
+        <img src="../assets/logo-a.jpg">
+    </div>
+    <div class="direita">
+        <form>
+            <mat-form-field appearance="fill">
+                <mat-label>Usuário</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Senha</mat-label>
+                <input matInput>
+            </mat-form-field>
+            <button mat-raised-button> Entrar </button>
+        </form>
 
-<div class="box">
-    <button mat-raised-button [routerLink]="['/admin-landing-page']"> Admin </button>
-    <button mat-raised-button [routerLink]="['/clientes']"> Gerente </button>
-    <button mat-raised-button [routerLink]="['/carteira']"> Cliente </button>
+        <div class="box">
+            <button mat-stroked-button [routerLink]="['/admin-landing-page']"> Admin </button>
+            <button mat-stroked-button [routerLink]="['/clientes']"> Gerente </button>
+            <button mat-stroked-button [routerLink]="['/carteira']"> Cliente </button>
+        </div>
+    </div>
 </div>

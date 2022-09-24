@@ -5,10 +5,20 @@ form {
 }
 
 .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     margin-top: 25px;
 }
 
 .box button {
     margin-right: 15px;
     justify-content: space-between;
+}
+
+.direita {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 100px;
 }
