@@ -360,3 +360,5 @@
 /home/caiolagana/Documents/dotNET/info-invest/bin/Debug/net6.0/linux-x64/SQLitePCLRaw.core.dll
 /home/caiolagana/Documents/dotNET/info-invest/bin/Debug/net6.0/linux-x64/SQLitePCLRaw.provider.e_sqlite3.dll
 /home/caiolagana/Documents/dotNET/info-invest/bin/Debug/net6.0/linux-x64/libe_sqlite3.so
+/home/caiolagana/Documents/dotNET/info-invest/bin/Debug/net6.0/linux-x64/package-lock.json
+/home/caiolagana/Documents/dotNET/info-invest/bin/Debug/net6.0/linux-x64/package.json

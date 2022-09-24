@@ -1,6 +1,6 @@
 namespace info_invest;
 
-public class WeatherForecast
+public class WeatherForecastX
 {
     public DateTime Date { get; set; }
 

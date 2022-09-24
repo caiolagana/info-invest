@@ -1,20 +1,23 @@
 /*
- * numismatist.sql	Beginner's database
+ * Create DB
  */
 
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
 
-Create Table coins(
-	denomination	TEXT,
-	value		FLOAT,
-	comments	TEXT
+DROP TABLE ativos;
+
+CREATE TABLE ativos(
+	nome TEXT,
+	grupo TEXT
 );
 
-Insert into coins values(
-	'Quarter',
-	30.35,
-	'Gift from Grandpa'
-);
+INSERT INTO ativos
+(nome, grupo)
+VALUES
+('ALFA MIX', 'Fundos'),
+('DNO FII', 'Fundos'),
+('Bitcoin', 'Criptomoedas'),
+('PETR4', 'Ações');
 
 COMMIT;

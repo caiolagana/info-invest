@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/75c0426e-5514-4c0f-970a-83a461b0ae01/AppServices/subscriptions/75c0426e-5514-4c0f-970a-83a461b0ae01/resourceGroups/info-invest/providers/Microsoft.Web/sites/info-invest",
+    "appService.deploySubpath": "bin/Release/net6.0/publish"
+}

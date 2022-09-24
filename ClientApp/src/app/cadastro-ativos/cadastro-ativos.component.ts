@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 
 interface Ativo {
   nome: string,
@@ -17,12 +20,7 @@ interface Grupo {
 })
 export class CadastroAtivosComponent implements OnInit {
 
-  ativos: Ativo[] = [
-    { nome: "PETR4", grupo: "Ações" },
-    { nome: "PETR4", grupo: "Ações" },
-    { nome: "PETR4", grupo: "Ações" },
-    { nome: "PETR4", grupo: "Ações" },
-  ]
+  ativos: Ativo[] = [];
 
   grupos: Grupo[] = [
     {value: 'renda-fixa', viewValue: 'Renda Fixa'},
@@ -33,10 +31,13 @@ export class CadastroAtivosComponent implements OnInit {
     {value: 'poupanca', viewValue: 'Poupança'},
     {value: 'cripto', viewValue: 'Criptomoeda'},
   ]
-  constructor() { }
 
-  ngOnInit(): void {
+  constructor(http: HttpClient,  @Inject('BASE_URL') baseUrl: string) {
+    http.get<Ativo[]>(baseUrl + 'ativos')
+      .subscribe(ativos => (this.ativos = ativos));
   }
+
+  ngOnInit(): void { }
 
   cadastraAtivo() {}
 }
