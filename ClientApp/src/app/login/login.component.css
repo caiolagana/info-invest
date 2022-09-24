@@ -1,0 +1,14 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 400px
+}
+
+.box {
+    margin-top: 25px;
+}
+
+.box button {
+    margin-right: 15px;
+    justify-content: space-between;
+}

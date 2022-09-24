@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "clvJQ980c0et4i8v8tzPTXWngkZr4BlZ4z17Fe5EyCk=",
+  "Source": "info-invest",
+  "BasePath": "_content/info-invest",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "info-invest/wwwroot",
+      "Source": "info-invest",
+      "ContentRoot": "/home/caiolagana/Documents/dotNET/info-invest/wwwroot/",
+      "BasePath": "_content/info-invest",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/home/caiolagana/Documents/dotNET/info-invest/wwwroot/favicon.ico",
+      "SourceId": "info-invest",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/caiolagana/Documents/dotNET/info-invest/wwwroot/",
+      "BasePath": "_content/info-invest",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/favicon.ico"
+    }
+  ]
+}

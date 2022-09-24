@@ -1,0 +1,8 @@
+{
+"SpaProxyServer": {
+"ServerUrl": "https://localhost:44445",
+"LaunchCommand": "npm start",
+"WorkingDirectory": "/home/caiolagana/Documents/dotNET/info-invest/ClientApp/",
+"MaxTimeoutInSeconds": "120"
+}
+}

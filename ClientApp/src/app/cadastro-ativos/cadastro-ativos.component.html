@@ -1,0 +1,30 @@
+<form class="example-form">
+    <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Grupo</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let grupo of grupos" [value]="grupo.value">
+            {{grupo.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    <button class="btn btn-primary" (click)="cadastraAtivo()"> Salvar </button>
+</form>
+
+<table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ativo of ativos">
+        <td>{{ ativo.nome }}</td>
+        <td>{{ ativo.grupo }}</td>
+      </tr>
+    </tbody>
+  </table>

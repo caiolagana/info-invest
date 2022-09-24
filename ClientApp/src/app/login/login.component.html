@@ -1,0 +1,17 @@
+<form class="example-form">
+    <mat-form-field appearance="fill">
+        <mat-label>Usuário</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <button class="btn btn-primary"> Entrar </button>
+</form>
+
+<div class="box">
+    <button mat-raised-button [routerLink]="['/admin-landing-page']"> Admin </button>
+    <button mat-raised-button [routerLink]="['/clientes']"> Gerente </button>
+    <button mat-raised-button [routerLink]="['/carteira']"> Cliente </button>
+</div>

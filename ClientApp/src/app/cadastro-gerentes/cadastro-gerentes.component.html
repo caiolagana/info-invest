@@ -1,0 +1,26 @@
+<form class="example-form">
+    <mat-form-field appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Idade</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <button class="btn btn-primary" (click)="cadastraGerente()"> Salvar </button>
+</form>
+
+<table class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Idade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let gerente of gerentes">
+        <td>{{ gerente.nome }}</td>
+        <td>{{ gerente.idade }}</td>
+      </tr>
+    </tbody>
+  </table>
