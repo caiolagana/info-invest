@@ -15,8 +15,8 @@ export interface Grupo {
 
 export class cgrupos {
   lista: Grupo[] = [
-    {value: 'renda-fixa', viewValue: 'Renda Fixa'},
-    {value: 'renda-vari', viewValue: 'Renda Variável'},
+    {value: 'fixa', viewValue: 'Renda Fixa'},
+    {value: 'variavel', viewValue: 'Renda Variável'},
     {value: 'fundos', viewValue: 'Fundos'},
     {value: 'acoes', viewValue: 'Ações'},
     {value: 'tesouro', viewValue: 'Tesouro Direto'},
@@ -52,7 +52,7 @@ export class CadastroAtivosComponent implements OnInit {
 
   cadastraAtivo() {
     if (this.grupoSelecionado != null && this.nomeAtivo != null)
-      this.send().subscribe(data => { this.recuperaAtivos() });
+      this.send().subscribe(() => { this.recuperaAtivos() });
     this.grupoSelecionado = null;
     this.nomeAtivo = null;
   }

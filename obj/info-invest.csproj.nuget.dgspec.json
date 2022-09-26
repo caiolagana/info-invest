@@ -65,6 +65,18 @@
             {
               "name": "Microsoft.AspNetCore.App.Ref",
               "version": "[6.0.8, 6.0.8]"
+            },
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
+              "version": "[6.0.8, 6.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.8, 6.0.8]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.linux-x64",
+              "version": "[6.0.8, 6.0.8]"
             }
           ],
           "frameworkReferences": {
@@ -76,6 +88,11 @@
             }
           },
           "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.108/RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "linux-x64": {
+          "#import": []
         }
       }
     }

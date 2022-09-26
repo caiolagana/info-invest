@@ -5,7 +5,8 @@ namespace info_invest.Controllers;
 
 public class Investimento {
     public string? cliente { get; set; }
-    public string? titulo { get; set; }
+    public string? ativo { get; set; }
+    public string? grupo { get; set; }
     public int quantidade { get; set; }
     public float valor { get; set; }
 }
@@ -19,8 +20,8 @@ public class CarteiraController : ControllerBase
     {
         List<Investimento> resposta;
         Console.WriteLine("Receiving from Angular front-end: " + s[0] + " " + s[1]);
-        resposta = leBanco(string.Format(@"SELECT * from {0} WHERE cliente = '{1}'", s[0], s[1]));
-Console.WriteLine(string.Format(@"SELECT * from {0} WHERE cliente = '{1}'", s[0], s[1]));
+        resposta = leBanco(string.Format(@"SELECT * FROM {0} WHERE cliente = '{1}'", s[0], s[1]));
+        Console.WriteLine(string.Format(@"SELECT * FROM {0} WHERE cliente = '{1}'", s[0], s[1]));
         Console.WriteLine("Respondendo: " + resposta.ToArray().Length.ToString());
         return Ok(resposta.ToArray());
     }
@@ -35,9 +36,10 @@ Console.WriteLine(string.Format(@"SELECT * from {0} WHERE cliente = '{1}'", s[0]
                     while (reader.Read()) {
                         result.Add(new Investimento {
                             cliente = reader.GetString(0),
-                            titulo = reader.GetString(1),
-                            quantidade = reader.GetInt16(2),
-                            valor = reader.GetFloat(3)
+                            ativo = reader.GetString(1),
+                            grupo = reader.GetString(2),
+                            quantidade = reader.GetInt16(3),
+                            valor = reader.GetFloat(4)
                         });
                     }
                 }

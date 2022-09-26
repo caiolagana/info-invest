@@ -1,5 +1,16 @@
 <h1>Carteira do cliente</h1>
-<h1>{{nome}}, {{idade}}</h1>
+<mat-form-field appearance="fill">
+  <mat-label>Cliente</mat-label>
+  <mat-select [(ngModel)]="cliente" (selectionChange)="carregaCliente()" name="escolheClienteCompra">
+    <ng-container *ngIf="ativos != null && ativos.length > 0">
+      <mat-option  *ngFor="let cliente of clientes" [value]="cliente.nome">
+        {{cliente.nome}}
+      </mat-option>
+    </ng-container>
+  </mat-select>
+</mat-form-field>
+
+<h1>{{cliente}}, {{idade}}</h1>
 <h1>R$ {{saldo | number:'1.2':'br'}}</h1>
 
 <form class="example-form">
@@ -11,14 +22,14 @@
         <mat-label>Ativo</mat-label>
         <mat-select [(ngModel)]="ativoCompra" name="ativoCompra">
           <ng-container *ngIf="ativos != null && ativos.length > 0">
-            <mat-option  *ngFor="let ativo of ativos" [value]="ativo.nome">
+            <mat-option  *ngFor="let ativo of ativos" [value]="{nome: ativo.nome, grupo: codigoGrupo(ativo.grupo)}">
               {{ativo.nome}} / {{ativo.grupo}}
             </mat-option>
           </ng-container>
         </mat-select>
       </mat-form-field>
     <button class="btn btn-primary" (click)="Comprar()"> Comprar </button>
-    <button class="btn btn-primary"> Vender </button>
+    <button class="btn btn-primary" (click)="Vender()"> Vender </button>
 </form>
 
 <app-investimento [investimentos]="fixa" [titulo]="'Renda Fixa'"></app-investimento>

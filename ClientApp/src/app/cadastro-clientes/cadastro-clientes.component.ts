@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
-interface Cliente {
+export interface Cliente {
   nome: string;
   idade: number;
   saldo: number;

@@ -11,7 +11,9 @@ const PROXY_CONFIG = [
       "/clientes",
       "/carteira",
       "/comprar",
-      "/vender"
+      "/vender",
+      "/saldo",
+      "/db"
    ],
     target: target,
     secure: false,

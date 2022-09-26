@@ -42,9 +42,9 @@ CREATE TABLE clientes(
 INSERT INTO clientes
 (nome, idade, saldo)
 VALUES
-('Ana Pereira', 28, 94809.10),
-('Carlos Nogueira', 49, 1114719.28),
-('Almir Soares', 37, 6798111.42);
+('Ana Pereira', 28, 100000),
+('Carlos Nogueira', 49, 200000),
+('Almir Soares', 37, 300000);
 
 DROP TABLE fixa;
 DROP TABLE variavel;
@@ -56,59 +56,71 @@ DROP TABLE cripto;
 
 CREATE TABLE fixa(
 	cliente TEXT,
-	titulo TEXT,
+	ativo TEXT,
+	grupo TEXT,
 	quantidade INT,
 	valor FLOAT
 );
 
 INSERT INTO fixa
-(cliente, titulo, quantidade, valor)
+(cliente, ativo, grupo, quantidade, valor)
 VALUES
-('Ana Pereira', 'CDB', 1, 10000);
+('Ana Pereira', 'CDB', 'fixa', 1, 50000),
+('Carlos Nogueira', 'CDB', 'fixa', 1, 100000);
 
 CREATE TABLE variavel(
 	cliente TEXT,
-	titulo TEXT,
+	ativo TEXT,
+	grupo TEXT,
 	quantidade INT,
 	valor FLOAT
 );
 
 CREATE TABLE fundos(
 	cliente TEXT,
-	titulo TEXT,
+	ativo TEXT,
+	grupo TEXT,
 	quantidade INT,
 	valor FLOAT
 );
 
+INSERT INTO fundos VALUES
+('Carlos Nogueira', 'DNO FII', 'fundos', 1, 100000);
+
 CREATE TABLE acoes(
 	cliente TEXT,
-	titulo TEXT,
+	ativo TEXT,
+	grupo TEXT,
 	quantidade INT,
 	valor FLOAT
 );
 
 INSERT INTO acoes
-(cliente, titulo, quantidade, valor)
+(cliente, ativo, grupo, quantidade, valor)
 VALUES
-('Ana Pereira', 'PETR4', 100, 23.50);
+('Ana Pereira', 'PETR4', 'variavel', 1, 50000),
+('Almir Soares', 'PETR4', 'variavel', 1, 300000);
 
 CREATE TABLE tesouro(
 	cliente TEXT,
-	titulo TEXT,
+	ativo TEXT,
+	grupo TEXT,
 	quantidade INT,
 	valor FLOAT
 );
 
 CREATE TABLE poupanca(
 	cliente TEXT,
-	titulo TEXT,
+	ativo TEXT,
+	grupo TEXT,
 	quantidade INT,
 	valor FLOAT
 );
 
 CREATE TABLE cripto(
 	cliente TEXT,
-	titulo TEXT,
+	ativo TEXT,
+	grupo TEXT,
 	quantidade INT,
 	valor FLOAT
 );

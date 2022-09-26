@@ -24,7 +24,7 @@
       <tr *ngFor="let cliente of clientes">
         <td>{{ cliente.nome }}</td>
         <td>{{ cliente.idade }}</td>
-        <td>{{ cliente.saldo }}</td>
+        <td>R$ {{ cliente.saldo | number:'1.2':'br'}}</td>
       </tr>
     </tbody>
   </table>
