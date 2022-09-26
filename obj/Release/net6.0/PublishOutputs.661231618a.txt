@@ -1,6 +1,8 @@
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/info-invest
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/appsettings.Development.json
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/appsettings.json
+/home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/package-lock.json
+/home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/package.json
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/info-invest.dll
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/info-invest.deps.json
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/info-invest.runtimeconfig.json
@@ -64,7 +66,7 @@
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/wwwroot/assets/logo-b.jpg
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/wwwroot/assets/logo-c.jpg
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/wwwroot/index.html
-/home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/wwwroot/main.b2f70f01e3adf851.js
+/home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/wwwroot/main.79dddfa8a58c1905.js
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/wwwroot/polyfills.6490e6d8d134fbfd.js
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/wwwroot/runtime.1c69ff895f85b7a7.js
 /home/caiolagana/Documents/dotNET/info-invest/bin/Release/net6.0/publish/wwwroot/styles.be8edd99f170e532.css
