@@ -1,16 +1,28 @@
-import { Component, OnInit, OnChanges, Inject } from '@angular/core';
+import { Component, OnInit, OnChanges, Inject, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
-interface Ativo {
+export interface Ativo {
   nome: string,
   grupo: string
 }
 
-interface Grupo {
+export interface Grupo {
   value: string,
   viewValue: string
+}
+
+export class cgrupos {
+  lista: Grupo[] = [
+    {value: 'renda-fixa', viewValue: 'Renda Fixa'},
+    {value: 'renda-vari', viewValue: 'Renda Variável'},
+    {value: 'fundos', viewValue: 'Fundos'},
+    {value: 'acoes', viewValue: 'Ações'},
+    {value: 'tesouro', viewValue: 'Tesouro Direto'},
+    {value: 'poupanca', viewValue: 'Poupança'},
+    {value: 'cripto', viewValue: 'Criptomoeda'},
+  ]
 }
 
 @Component({
@@ -24,15 +36,8 @@ export class CadastroAtivosComponent implements OnInit {
   grupoSelecionado: string | null = null;
   nomeAtivo: string | null = null;
 
-  grupos: Grupo[] = [
-    {value: 'renda-fixa', viewValue: 'Renda Fixa'},
-    {value: 'renda-vari', viewValue: 'Renda Variável'},
-    {value: 'fundos', viewValue: 'Fundos'},
-    {value: 'acoes', viewValue: 'Ações'},
-    {value: 'tesouro', viewValue: 'Tesouro Direto'},
-    {value: 'poupanca', viewValue: 'Poupança'},
-    {value: 'cripto', viewValue: 'Criptomoeda'},
-  ]
+  x = new cgrupos();
+  grupos: Grupo[] = this.x.lista;
 
   constructor(private http: HttpClient,  @Inject('BASE_URL') baseUrl: string) {
     this.recuperaAtivos();
@@ -47,7 +52,7 @@ export class CadastroAtivosComponent implements OnInit {
 
   cadastraAtivo() {
     if (this.grupoSelecionado != null && this.nomeAtivo != null)
-      this.send().subscribe(data => {console.log('data ' + data); this.recuperaAtivos()});
+      this.send().subscribe(data => { this.recuperaAtivos() });
     this.grupoSelecionado = null;
     this.nomeAtivo = null;
   }

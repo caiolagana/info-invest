@@ -6,6 +6,8 @@ import { registerLocaleData } from '@angular/common';
 import localeBr from '@angular/common/locales/br';
 registerLocaleData(localeBr, 'br');
 
+import { cgrupos, Grupo, Ativo } from '../cadastro-ativos/cadastro-ativos.component';
+
 export interface Investimento {
   cliente: string;
   titulo: string;
@@ -27,10 +29,17 @@ export class CarteiraComponent implements OnInit {
   tesouro: Investimento[] | null = null;
   poupanca: Investimento[] | null = null;
   cripto: Investimento[] | null = null;
+
   cliente: string | null = "Ana Pereira";
   nome = "Ana Pereira";
   idade = 28;
   saldo = 0;
+
+  x = new cgrupos();
+  grupos: Grupo[] = this.x.lista;
+  ativos: Ativo[] = [];
+  valorCompra: number | null = null;
+  ativoCompra: string | null = null;
 
   constructor(private http: HttpClient) {
     this.recuperaInvestimento('fixa', this.cliente!);
@@ -40,14 +49,16 @@ export class CarteiraComponent implements OnInit {
     this.recuperaInvestimento('tesouro', this.cliente!);
     this.recuperaInvestimento('poupanca', this.cliente!);
     this.recuperaInvestimento('cripto', this.cliente!);
+    this.recuperaAtivos();
   }
 
   ngOnInit(): void { }
 
   Comprar() {
-
+    this.valorCompra = null;
+    this.ativoCompra = null;
   }
-  
+
   recuperaInvestimento(grupo: string, cliente: string) {
     let res: Investimento[] | null = null;
       this.send(grupo, cliente).subscribe(inv => {
@@ -71,5 +82,10 @@ export class CarteiraComponent implements OnInit {
     let soma = 0;
     invs.forEach(inv => soma += inv.quantidade * inv.valor);
     return soma;
+  }
+
+  recuperaAtivos() {
+    this.http.get<Ativo[]>('ativos')
+    .subscribe(ativos => (this.ativos = ativos));
   }
 }

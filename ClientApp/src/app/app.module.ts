@@ -9,37 +9,27 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
-import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
-import { FetchDataComponent } from './fetch-data/fetch-data.component';
 import { LoginComponent } from './login/login.component';
 import { CadastroAtivosComponent } from './cadastro-ativos/cadastro-ativos.component';
-import { ClientesComponent } from './clientes/clientes.component';
+import { CadastroClientesComponent } from './cadastro-clientes/cadastro-clientes.component';
 import { CarteiraComponent } from './carteira/carteira.component';
 import { CadastroGerentesComponent } from './cadastro-gerentes/cadastro-gerentes.component';
 import { AdminLandingPageComponent } from './admin-landing-page/admin-landing-page.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AcoesComponent } from './acoes/acoes.component';
-import { FundosComponent } from './fundos/fundos.component';
-import { CriptosComponent } from './criptos/criptos.component';
 import { InvestimentoComponent } from './investimento/investimento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
-    HomeComponent,
-    CounterComponent,
-    FetchDataComponent,
     LoginComponent,
     CadastroAtivosComponent,
-    ClientesComponent,
+    CadastroClientesComponent,
     CarteiraComponent,
     CadastroGerentesComponent,
     AdminLandingPageComponent,
     AcoesComponent,
-    FundosComponent,
-    CriptosComponent,
     InvestimentoComponent
   ],
   imports: [
@@ -51,10 +41,8 @@ import { InvestimentoComponent } from './investimento/investimento.component';
     MatButtonModule,
     RouterModule.forRoot([
       { path: '', component: LoginComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
-      { path: 'fetch-data', component: FetchDataComponent },
       { path: 'admin-landing-page', component: AdminLandingPageComponent },
-      { path: 'cadastro-clientes', component: ClientesComponent },
+      { path: 'cadastro-clientes', component: CadastroClientesComponent },
       { path: 'cadastro-gerentes', component: CadastroGerentesComponent },
       { path: 'cadastro-ativos', component: CadastroAtivosComponent },
       { path: 'carteira-cliente', component: CarteiraComponent},

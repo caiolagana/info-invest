@@ -5,16 +5,19 @@
 <form class="example-form">
     <mat-form-field appearance="fill">
         <mat-label>Valor R$</mat-label>
-        <input matInput>
+        <input matInput [(ngModel)]="valorCompra" name="valorCompra">
     </mat-form-field>
     <mat-form-field appearance="fill">
-        <mat-label>Grupo</mat-label>
-        <mat-select>
-          <mat-option>
-          </mat-option>
+        <mat-label>Ativo</mat-label>
+        <mat-select [(ngModel)]="ativoCompra" name="ativoCompra">
+          <ng-container *ngIf="ativos != null && ativos.length > 0">
+            <mat-option  *ngFor="let ativo of ativos" [value]="ativo.nome">
+              {{ativo.nome}} / {{ativo.grupo}}
+            </mat-option>
+          </ng-container>
         </mat-select>
       </mat-form-field>
-    <button class="btn btn-primary"> Comprar </button>
+    <button class="btn btn-primary" (click)="Comprar()"> Comprar </button>
     <button class="btn btn-primary"> Vender </button>
 </form>
 
