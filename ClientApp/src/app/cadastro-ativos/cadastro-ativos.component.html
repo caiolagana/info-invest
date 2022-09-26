@@ -3,12 +3,12 @@
 <form class="example-form">
     <mat-form-field appearance="fill">
         <mat-label>Nome</mat-label>
-        <input matInput>
+        <input matInput [(ngModel)]="nomeAtivo" name="nomeiaAtivo">
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Grupo</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let grupo of grupos" [value]="grupo.value">
+        <mat-select [(ngModel)]="grupoSelecionado" name="selecionaGrupo">
+          <mat-option *ngFor="let grupo of grupos" [value]="grupo.viewValue">
             {{grupo.viewValue}}
           </mat-option>
         </mat-select>
@@ -30,3 +30,4 @@
       </tr>
     </tbody>
   </table>
+  <button (click)="recuperaAtivos()">Refresh</button>

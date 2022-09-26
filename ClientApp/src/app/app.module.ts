@@ -22,6 +22,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AcoesComponent } from './acoes/acoes.component';
 import { FundosComponent } from './fundos/fundos.component';
 import { CriptosComponent } from './criptos/criptos.component';
+import { InvestimentoComponent } from './investimento/investimento.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { CriptosComponent } from './criptos/criptos.component';
     AdminLandingPageComponent,
     AcoesComponent,
     FundosComponent,
-    CriptosComponent
+    CriptosComponent,
+    InvestimentoComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -52,10 +54,10 @@ import { CriptosComponent } from './criptos/criptos.component';
       { path: 'counter', component: CounterComponent },
       { path: 'fetch-data', component: FetchDataComponent },
       { path: 'admin-landing-page', component: AdminLandingPageComponent },
-      { path: 'clientes', component: ClientesComponent },
+      { path: 'cadastro-clientes', component: ClientesComponent },
       { path: 'cadastro-gerentes', component: CadastroGerentesComponent },
       { path: 'cadastro-ativos', component: CadastroAtivosComponent },
-      { path: 'carteira', component: CarteiraComponent },
+      { path: 'carteira-cliente', component: CarteiraComponent},
     ]),
     BrowserAnimationsModule
   ],

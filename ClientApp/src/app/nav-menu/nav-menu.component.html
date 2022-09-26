@@ -3,7 +3,7 @@
     class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
   >
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">info_invest</a>
+      <a class="navbar-brand" [routerLink]="['/']"><!--<img src="../assets/logo-c.jpg" width="150px">--></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -26,6 +26,8 @@
             [routerLinkActiveOptions]="{ exact: true }">
             <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
           </li>
+          <a class="nav-link text-dark">|</a>
+          <li class="nav-item"><a class="nav-link text-dark">Sair</a></li>
 
 <!--          <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/admin-landing-page']">Admin</a>
@@ -42,10 +44,10 @@
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/clientes']">Clientes</a>
           </li>
--->
           <li class="nav-item" [routerLinkActive]="['link-active']">
             <a class="nav-link text-dark" [routerLink]="['/fetch-data']">Fetch data</a>
           </li>
+          -->
         </ul>
       </div>
     </div>

@@ -1,0 +1,19 @@
+<ng-container *ngIf="investimentos!.length > 0">
+    <h1> {{titulo}} </h1>
+    <table class='table table-striped' aria-labelledby="tableLabel">
+        <thead>
+            <tr>
+                <th>Titulo</th>
+                <th>Quantidade</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let investimento of investimentos">
+                <td>{{ investimento.titulo }}</td>
+                <td>{{ investimento.quantidade }}</td>
+                <td>R$ {{ investimento.valor | number:'1.2':'br'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</ng-container>

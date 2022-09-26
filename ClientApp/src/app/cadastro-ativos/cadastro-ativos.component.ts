@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, OnChanges, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
@@ -21,6 +21,8 @@ interface Grupo {
 export class CadastroAtivosComponent implements OnInit {
 
   ativos: Ativo[] = [];
+  grupoSelecionado: string | null = null;
+  nomeAtivo: string | null = null;
 
   grupos: Grupo[] = [
     {value: 'renda-fixa', viewValue: 'Renda Fixa'},
@@ -32,12 +34,26 @@ export class CadastroAtivosComponent implements OnInit {
     {value: 'cripto', viewValue: 'Criptomoeda'},
   ]
 
-  constructor(http: HttpClient,  @Inject('BASE_URL') baseUrl: string) {
-    http.get<Ativo[]>(baseUrl + 'ativos')
-      .subscribe(ativos => (this.ativos = ativos));
+  constructor(private http: HttpClient,  @Inject('BASE_URL') baseUrl: string) {
+    this.recuperaAtivos();
   }
 
   ngOnInit(): void { }
 
-  cadastraAtivo() {}
+  recuperaAtivos() {
+    this.http.get<Ativo[]>('ativos')
+    .subscribe(ativos => (this.ativos = ativos));
+  }
+
+  cadastraAtivo() {
+    if (this.grupoSelecionado != null && this.nomeAtivo != null)
+      this.send().subscribe(data => {console.log('data ' + data); this.recuperaAtivos()});
+    this.grupoSelecionado = null;
+    this.nomeAtivo = null;
+  }
+
+  send(): Observable<Ativo> {
+    let ativo: Ativo = { nome: this.nomeAtivo!, grupo: this.grupoSelecionado! };
+    return this.http.post<Ativo>('ativos', ativo);
+  }
 }

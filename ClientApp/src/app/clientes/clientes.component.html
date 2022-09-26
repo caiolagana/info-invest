@@ -3,11 +3,11 @@
 <form class="example-form">
     <mat-form-field appearance="fill">
         <mat-label>Nome</mat-label>
-        <input matInput>
+        <input matInput [(ngModel)]="nomeCliente" name="nomeiaCliente">
     </mat-form-field>
     <mat-form-field appearance="fill">
         <mat-label>Idade</mat-label>
-        <input matInput>
+        <input matInput [(ngModel)]="idadeCliente" name="idadeiaCliente">
     </mat-form-field>
     <button class="btn btn-primary" (click)="cadastraCliente()"> Cadastrar </button>
 </form>

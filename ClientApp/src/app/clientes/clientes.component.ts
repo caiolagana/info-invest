@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
 
 interface Cliente {
   nome: string;
@@ -13,17 +15,30 @@ interface Cliente {
 })
 export class ClientesComponent implements OnInit {
 
-  clientes: Cliente[] = [
-    {nome: "Ana Pereira", idade: 28, saldo: 94809.10},
-    {nome: "Carlos Nogueira", idade: 49, saldo: 1114719.28},
-    {nome: "Almir Soares", idade: 37, saldo: 6798111.42},
-  ];
+  clientes: Cliente[] = [];
+  nomeCliente: string | null = null;
+  idadeCliente: number | null = null;
 
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log("hi im logging")
+  constructor(private http: HttpClient) {
+    this.recuperaClientes();
   }
 
-  cadastraCliente() {}
+  ngOnInit(): void {}
+
+  recuperaClientes() {
+    this.http.get<Cliente[]>('clientes')
+    .subscribe(clientes => (this.clientes = clientes));
+  }
+
+  cadastraCliente() {
+    if (this.nomeCliente != null && this.idadeCliente != null)
+      this.send().subscribe(() => {this.recuperaClientes()});
+    this.nomeCliente = null;
+    this.idadeCliente = null;
+  }
+
+  send(): Observable<Cliente> {
+    let cliente: Cliente = { nome: this.nomeCliente!, idade: this.idadeCliente!, saldo: 0 };
+    return this.http.post<Cliente>('clientes', cliente);
+  }
 }

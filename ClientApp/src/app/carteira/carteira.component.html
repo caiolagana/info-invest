@@ -1,5 +1,6 @@
 <h1>Carteira do cliente</h1>
 <h1>{{nome}}, {{idade}}</h1>
+<h1>R$ {{saldo | number:'1.2':'br'}}</h1>
 
 <form class="example-form">
     <mat-form-field appearance="fill">
@@ -17,6 +18,10 @@
     <button class="btn btn-primary"> Vender </button>
 </form>
 
-<app-acoes></app-acoes>
-<app-fundos></app-fundos>
-<app-criptos></app-criptos>
+<app-investimento [investimentos]="fixa" [titulo]="'Renda Fixa'"></app-investimento>
+<app-investimento [investimentos]="variavel" [titulo]="'Renda Variável'"></app-investimento>
+<app-investimento [investimentos]="fundos" [titulo]="'Fundos'"></app-investimento>
+<app-investimento [investimentos]="acoes" [titulo]="'Ações'"></app-investimento>
+<app-investimento [investimentos]="tesouro" [titulo]="'Tesouro Direto'"></app-investimento>
+<app-investimento [investimentos]="poupanca" [titulo]="'Poupança'"></app-investimento>
+<app-investimento [investimentos]="cripto" [titulo]="'Criptomoedas'"></app-investimento>
