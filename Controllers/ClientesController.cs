@@ -25,7 +25,7 @@ public class ClientesController : ControllerBase
     [HttpGet]
     public IEnumerable<Cliente> Get()
     {
-        return leCliente(@"SELECT * FROM clientes;");
+        return leCliente(@"SELECT * FROM [dbo].[Clientes];");
     }
 
     Cliente[] leCliente(string cmd) {
