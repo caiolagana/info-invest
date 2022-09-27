@@ -62,12 +62,12 @@ export class CarteiraComponent implements OnInit {
   }
 
   atualizaSaldo(saldo: string, cliente: string) {
-    let cmd: string =  "UPDATE clientes SET saldo = " + saldo + " WHERE nome = '" + cliente + "';";
+    let cmd: string =  "UPDATE clientes SET saldo = " + saldo.toString() + " WHERE CONVERT(VARCHAR, nome) = '" + cliente + "';";
     this.postDB([cmd, 'w']).subscribe(() => {});
   }
 
   recuperaSaldo(cliente: string) {
-    let cmd: string =  "SELECT saldo FROM clientes WHERE nome = '" + cliente + "';";
+    let cmd: string =  "SELECT saldo FROM clientes WHERE CONVERT(VARCHAR, nome) = '" + cliente + "';";
     this.postDB([cmd, 'r']).subscribe((r) => {this.saldo = parseFloat(r[0]);});
   }
 
@@ -94,7 +94,7 @@ export class CarteiraComponent implements OnInit {
         valor: this.valorCompra!
       }
       this.saldo -= venda.quantidade * venda.valor;
-      let cmdSaldo: string =  "UPDATE clientes SET saldo = " + this.saldo + " WHERE nome = '" + this.cliente + "';";
+      let cmdSaldo: string =  "UPDATE clientes SET saldo = " + this.saldo.toString() + " WHERE CONVERT(VARCHAR, nome) = '" + this.cliente + "';";
       this.postDB([cmdSaldo, 'w']).subscribe(() => {});
       //let cmdAtivo: string =  "UPDATE " + venda.grupo + " SET valor = " + this.saldo + " WHERE cliente = '" + this.cliente + "';";
     }

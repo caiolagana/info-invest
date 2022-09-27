@@ -7,7 +7,7 @@ namespace info_invest.Controllers;
 public class Cliente {
     public string? nome { get; set; }
     public int? idade { get; set; }
-    public float? saldo {get; set; }
+    public double? saldo {get; set; }
 }
 
 [ApiController]
@@ -42,8 +42,8 @@ public class ClientesController : ControllerBase
                     while (reader.Read()) {
                         result.Add(new Cliente {
                             nome = reader.GetString(0),
-                            idade = reader.GetInt16(1),
-                            saldo = reader.GetFloat(2)
+                            idade = reader.GetInt32(1),
+                            saldo = reader.GetDouble(2)
                         });
                     }
                 }

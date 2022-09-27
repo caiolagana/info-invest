@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.Sqlite;
+using Microsoft.Data.SqlClient;
 
 namespace info_invest.Controllers;
 
@@ -28,7 +29,10 @@ public class AtivosController : ControllerBase
 
     Ativo[] leAtivo(string cmd) {
         List<Ativo> result = new List<Ativo>();
-        using (var conn = new SqliteConnection(@"Data Source=sqlite-info-invest.db")) {
+        SqlConnectionStringBuilder sqlbuilder = new SqlConnectionStringBuilder();
+        sqlbuilder.ConnectionString="Data Source=info-invest-server.database.windows.net,1433;Initial Catalog=info-invest-db;User ID=infoinvestadmin;Password=Inf0inv&sT";
+        using (SqlConnection conn = new SqlConnection(sqlbuilder.ConnectionString))
+        {
             conn.Open();
             using (var command = conn.CreateCommand()) {
                 command.CommandText = cmd;
@@ -48,12 +52,10 @@ public class AtivosController : ControllerBase
 
     void escreveAtivo(String cmd) {
 
-    //Connect to Azure SQL DB
-    //SqlConnectionStringBuilder sqlbuilder = new SqlConnectionStringBuilder();
-    //sqlbuilder.ConnectionString="Data Source=info-invest-server.database.windows.net,1433;Initial Catalog=info-invest-db;User ID=infoinvestadmin;Password=Inf0inv&sT";
-    //using (SqlConnection connection = new SqlConnection(sqlbuilder.ConnectionString)) { ... }
-
-    using (var conn = new SqliteConnection(@"Data Source=sqlite-info-invest.db"))
+    //using (var conn = new SqliteConnection(@"Data Source=sqlite-info-invest.db"))
+    SqlConnectionStringBuilder sqlbuilder = new SqlConnectionStringBuilder();
+    sqlbuilder.ConnectionString="Data Source=info-invest-server.database.windows.net,1433;Initial Catalog=info-invest-db;User ID=infoinvestadmin;Password=Inf0inv&sT";
+    using (SqlConnection conn = new SqlConnection(sqlbuilder.ConnectionString))
     {
         conn.Open();
         using (var command = conn.CreateCommand()) {
